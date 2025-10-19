@@ -12,7 +12,7 @@ import {
 import { AppContext } from "../App";
 import { mockExpenses } from "../utils/mockData";
 import Modal from "../components/Modal";
-import { Plus, Trash2 } from "lucide-react";
+import { Ionicons } from "@expo/vector-icons";
 
 export default function ExpensesScreen() {
   const { theme, currentUser, currency } = useContext(AppContext);
@@ -93,7 +93,7 @@ export default function ExpensesScreen() {
           -{currency} {item.amount.toFixed(2)}
         </Text>
         <TouchableOpacity onPress={() => handleDelete(item.id)}>
-          <Trash2 color="#ef4444" size={18} />
+          <Ionicons name="trash" color="#ef4444" size={18} />
         </TouchableOpacity>
       </View>
     </View>
@@ -114,7 +114,7 @@ export default function ExpensesScreen() {
           style={styles.addButton}
           onPress={() => setShowAddModal(true)}
         >
-          <Plus color="#fff" size={20} />
+          <Ionicons name="add" color="#fff" size={20} />
         </TouchableOpacity>
       </View>
 

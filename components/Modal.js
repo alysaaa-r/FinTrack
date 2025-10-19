@@ -1,7 +1,7 @@
 // components/Modal.js
 import React, { useContext } from "react";
 import { View, Text, TouchableOpacity, StyleSheet, ScrollView } from "react-native";
-import { X } from "lucide-react";
+import { Ionicons } from "@expo/vector-icons";
 import { AppContext } from "../App";
 
 export default function Modal({ title, onClose, children }) {
@@ -21,7 +21,7 @@ export default function Modal({ title, onClose, children }) {
             {title}
           </Text>
           <TouchableOpacity onPress={onClose}>
-            <X color={isDark ? "#bbb" : "#555"} size={24} />
+            <Ionicons name="close" color={isDark ? "#bbb" : "#555"} size={24} />
           </TouchableOpacity>
         </View>
         <ScrollView>{children}</ScrollView>

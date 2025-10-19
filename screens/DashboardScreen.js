@@ -8,16 +8,7 @@ import {
   StyleSheet,
   Alert,
 } from "react-native";
-import {
-  Plus,
-  Wallet,
-  Trash2,
-  Utensils,
-  Bus,
-  ShoppingBag,
-  FileText,
-  Settings,
-} from "lucide-react";
+import { Ionicons, MaterialCommunityIcons } from "@expo/vector-icons";
 import { AppContext } from "../App";
 import {
   mockBudgets,
@@ -95,15 +86,15 @@ export default function DashboardScreen({ navigation }) {
   const getCategoryIcon = (name, color) => {
     switch (name) {
       case "Food":
-        return <Utensils color={color} size={20} />;
+        return <MaterialCommunityIcons name="food" color={color} size={20} />;
       case "Transportation":
-        return <Bus color={color} size={20} />;
+        return <Ionicons name="bus" color={color} size={20} />;
       case "Shopping":
-        return <ShoppingBag color={color} size={20} />;
+        return <Ionicons name="bag" color={color} size={20} />;
       case "Bills":
-        return <FileText color={color} size={20} />;
+        return <Ionicons name="document-text" color={color} size={20} />;
       default:
-        return <Wallet color={color} size={20} />;
+        return <MaterialCommunityIcons name="wallet" color={color} size={20} />;
     }
   };
 
@@ -130,7 +121,7 @@ export default function DashboardScreen({ navigation }) {
             <Text style={styles.userName}>{currentUser?.name}</Text>
           </View>
           <TouchableOpacity onPress={() => navigation.navigate("Settings")}>
-            <Settings color="#fff" size={24} />
+            <Ionicons name="settings" color="#fff" size={24} />
           </TouchableOpacity>
         </View>
 
@@ -219,7 +210,7 @@ export default function DashboardScreen({ navigation }) {
               onPress={() => setShowBudgetModal(true)}
               style={styles.setBudgetButton}
             >
-              <Plus color="#fff" size={18} />
+              <Ionicons name="add" color="#fff" size={18} />
               <Text style={styles.setBudgetText}>Set Budget</Text>
             </TouchableOpacity>
           </View>
@@ -237,7 +228,7 @@ export default function DashboardScreen({ navigation }) {
               Categories
             </Text>
             <TouchableOpacity style={styles.addButton} onPress={addCategory}>
-              <Plus color="#fff" size={18} />
+              <Ionicons name="add" color="#fff" size={18} />
             </TouchableOpacity>
           </View>
 
@@ -281,7 +272,7 @@ export default function DashboardScreen({ navigation }) {
                   onPress={() => deleteCategory(name)}
                   style={styles.deleteButton}
                 >
-                  <Trash2 color="#ef4444" size={18} />
+                  <Ionicons name="trash" color="#ef4444" size={18} />
                 </TouchableOpacity>
               </View>
             ))}

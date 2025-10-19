@@ -8,7 +8,7 @@ import {
   StyleSheet,
   ScrollView,
 } from "react-native";
-import { ArrowLeft, Eye, EyeOff } from "lucide-react";
+import { Ionicons } from "@expo/vector-icons";
 import { AppContext } from "../App";
 import { mockUsers } from "../utils/mockData";
 
@@ -56,7 +56,7 @@ export default function SignupScreen({ navigation }) {
         style={styles.backButton}
         onPress={() => navigation.navigate("Welcome")}
       >
-        <ArrowLeft color={isDark ? "#fff" : "#111"} size={26} />
+        <Ionicons name="arrow-back" color={isDark ? "#fff" : "#111"} size={26} />
       </TouchableOpacity>
 
       <View style={styles.inner}>
@@ -136,9 +136,9 @@ export default function SignupScreen({ navigation }) {
                 style={styles.eyeIcon}
               >
                 {showPassword ? (
-                  <EyeOff color={isDark ? "#9ca3af" : "#6b7280"} size={22} />
+                  <Ionicons name="eye-off" color={isDark ? "#9ca3af" : "#6b7280"} size={22} />
                 ) : (
-                  <Eye color={isDark ? "#9ca3af" : "#6b7280"} size={22} />
+                  <Ionicons name="eye" color={isDark ? "#9ca3af" : "#6b7280"} size={22} />
                 )}
               </TouchableOpacity>
             </View>

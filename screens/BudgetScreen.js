@@ -12,7 +12,7 @@ import {
 import { AppContext } from "../App";
 import { mockBudgets } from "../utils/mockData";
 import Modal from "../components/Modal";
-import { Edit3 } from "lucide-react";
+import { Ionicons } from "@expo/vector-icons";
 
 export default function BudgetScreen() {
   const { theme, currentUser, currency } = useContext(AppContext);
@@ -122,7 +122,7 @@ export default function BudgetScreen() {
               style={styles.editButton}
               onPress={() => openEditModal(p)}
             >
-              <Edit3 color="#fff" size={18} />
+              <Ionicons name="pencil" color="#fff" size={18} />
             </TouchableOpacity>
           </View>
         ))}

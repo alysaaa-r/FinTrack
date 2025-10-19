@@ -1,7 +1,7 @@
 // screens/WelcomeScreen.js
 import React, { useContext } from "react";
 import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
-import { Wallet } from "lucide-react";
+import { MaterialIcons } from "@expo/vector-icons";
 import { AppContext } from "../App";
 
 export default function WelcomeScreen({ navigation }) {
@@ -17,7 +17,7 @@ export default function WelcomeScreen({ navigation }) {
     >
       <View style={styles.header}>
         <View style={styles.iconWrapper}>
-          <Wallet color="#fff" size={48} />
+          <MaterialIcons name="account-balance-wallet" color="#fff" size={48} />
         </View>
         <Text style={[styles.title, { color: isDark ? "#fff" : "#111" }]}>
           FinTrack
